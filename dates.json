@@ -133,11 +133,5 @@
     "start": "2027-12-21",
     "end": "2028-01-28",
     "done": false
-  },
-  {
-    "title": "Spike Prime Challenge due",
-    "kind": "event",
-    "start": "",
-    "done": false
   }
 ]
