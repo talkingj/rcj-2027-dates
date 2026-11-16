@@ -12,12 +12,14 @@
     "done": false
   },
   {
-    "title": "",
+    "title": "RCJA Season Launch",
     "kind": "event",
     "start": "2027-02-22",
     "time": "7:30pm",
     "place": "Online",
-    "done": false
+    "done": false,
+    "coordinator": "Karen Binns",
+    "status": "Confirmed"
   },
   {
     "title": "",
