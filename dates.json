@@ -1,137 +1,172 @@
 [
   {
-    "title": "Planning Day",
-    "kind": "event",
-    "start": "2027-02-06",
-    "note": "Working bee",
-    "done": false
+    "title": "Term 1",
+    "kind": "term",
+    "start": "2027-01-28",
+    "end": "2027-04-09"
   },
   {
-    "title": "National Launch Day",
+    "title": "Term 2",
+    "kind": "term",
+    "start": "2027-04-26",
+    "end": "2027-07-02"
+  },
+  {
+    "title": "Term 3",
+    "kind": "term",
+    "start": "2027-07-19",
+    "end": "2027-09-24"
+  },
+  {
+    "title": "Term 4",
+    "kind": "term",
+    "start": "2027-10-11",
+    "end": "2027-12-20"
+  },
+  {
+    "title": "Summer holidays",
+    "kind": "holiday",
+    "start": "2026-12-18",
+    "end": "2027-01-27"
+  },
+  {
+    "title": "Autumn holidays",
+    "kind": "holiday",
+    "start": "2027-04-12",
+    "end": "2027-04-23"
+  },
+  {
+    "title": "Winter holidays",
+    "kind": "holiday",
+    "start": "2027-07-05",
+    "end": "2027-07-16"
+  },
+  {
+    "title": "Spring holidays",
+    "kind": "holiday",
+    "start": "2027-09-27",
+    "end": "2027-10-08"
+  },
+  {
+    "title": "Summer holidays",
+    "kind": "holiday",
+    "start": "2027-12-21",
+    "end": "2028-01-28"
+  },
+  {
+    "title": "Planning day",
+    "kind": "event",
+    "start": "2027-02-06"
+  },
+  {
+    "title": "RCJA Season Launch 2027",
     "kind": "event",
     "start": "2027-02-22",
     "time": "7:30pm",
     "place": "Online",
-    "done": false
+    "coordinator": "Karen Binns"
   },
   {
-    "title": "Teacher Workshop",
+    "title": "Teacher professional learning",
     "kind": "event",
     "start": "2027-03-20",
     "time": "1–4pm",
-    "place": "Melrose Park Public School",
-    "done": false
+    "place": "Melrose Park Public School"
   },
   {
-    "title": "Thirlmere Workshop",
-    "kind": "possible",
-    "start": "2027-04-05",
-    "end": "2027-04-09",
-    "note": "Last week of Term 1",
-    "done": false
-  },
-  {
-    "title": "Autumn school holidays",
-    "kind": "holiday",
-    "start": "2027-04-12",
-    "end": "2027-04-23",
-    "done": false
-  },
-  {
-    "title": "Campbelltown Workshop",
-    "kind": "possible",
-    "start": "2027-04-26",
-    "end": "2027-04-30",
-    "note": "First week of Term 2",
-    "done": false
-  },
-  {
-    "title": "Wollongong Workshop",
-    "kind": "possible",
-    "start": "2027-05-03",
-    "end": "2027-05-07",
-    "note": "Week 2 of Term 2",
-    "done": false
-  },
-  {
-    "title": "Term 2 Workshop",
+    "title": "Sydney student workshop",
     "kind": "event",
     "start": "2027-05-15",
     "time": "1–4pm",
-    "place": "Venue TBC: Melrose Park Public School or MLC Burwood",
-    "done": false
-  },
-  {
-    "title": "Term 2 Workshop",
-    "kind": "possible",
-    "start": "2027-06-14",
-    "end": "2027-06-20",
-    "note": "Middle week of June",
-    "done": false
-  },
-  {
-    "title": "Winter school holidays",
-    "kind": "holiday",
-    "start": "2027-07-05",
-    "end": "2027-07-16",
-    "done": false
+    "place": "Venue TBC: Melrose Park Public School or MLC Burwood"
   },
   {
     "title": "Hunter Regionals",
     "kind": "event",
-    "start": "2027-07-29",
-    "note": "Week 2 Term 3",
-    "done": false
+    "start": "2027-07-29"
   },
   {
     "title": "Sydney Regionals",
     "kind": "event",
     "start": "2027-07-31",
-    "place": "Thomas Hassall Anglican College",
-    "done": false
-  },
-  {
-    "title": "State Competition",
-    "kind": "possible",
-    "start": "2027-08-23",
-    "end": "2027-09-10",
-    "note": "Late August or early September",
-    "done": false
-  },
-  {
-    "title": "Spring school holidays",
-    "kind": "holiday",
-    "start": "2027-09-27",
-    "end": "2027-10-08",
-    "done": false
-  },
-  {
-    "title": "Nationals",
-    "kind": "possible",
-    "start": "2027-10-01",
-    "end": "2027-10-31",
-    "note": "Any time in October",
-    "done": false
-  },
-  {
-    "title": "Sumo Competition",
-    "kind": "possible",
-    "start": "2027-11-15",
-    "end": "2027-11-19",
-    "note": "Middle week of November",
-    "done": false
+    "place": "Thomas Hassall Anglican College"
   },
   {
     "title": "RoboLeaders Exhibition",
     "kind": "event",
-    "start": "2027-12-08",
-    "done": false
+    "start": "2027-12-08"
   },
   {
-    "title": "Summer school holidays",
-    "kind": "holiday",
-    "start": "2027-12-21",
-    "end": "2028-01-28",
-    "done": false
+    "title": "Thirlmere/Tahmoor workshop",
+    "kind": "possible",
+    "start": "2027-04-05",
+    "end": "2027-04-09",
+    "note": "Last week of Term 1"
+  },
+  {
+    "title": "Campbelltown/Macarthur workshop",
+    "kind": "possible",
+    "start": "2027-04-26",
+    "end": "2027-04-30",
+    "note": "First week of Term 2"
+  },
+  {
+    "title": "Wollongong workshop",
+    "kind": "possible",
+    "start": "2027-05-03",
+    "end": "2027-05-07"
+  },
+  {
+    "title": "Term 2 workshop",
+    "kind": "possible",
+    "start": "2027-06-14",
+    "end": "2027-06-20",
+    "note": "Middle week of June"
+  },
+  {
+    "title": "NSW State Competition",
+    "kind": "possible",
+    "start": "2027-08-23",
+    "end": "2027-09-10",
+    "note": "Late August or early September"
+  },
+  {
+    "title": "RoboCup Junior Nationals",
+    "kind": "possible",
+    "start": "2027-10-01",
+    "end": "2027-10-31",
+    "note": "Any time in October"
+  },
+  {
+    "title": "RCJ NSW SUMO event",
+    "kind": "possible",
+    "start": "2027-11-15",
+    "end": "2027-11-19",
+    "note": "Middle week of November"
+  },
+  {
+    "title": "Working bee",
+    "kind": "event",
+    "start": ""
+  },
+  {
+    "title": "NSW committee meeting",
+    "kind": "event",
+    "start": ""
+  },
+  {
+    "title": "Volunteer / judge training",
+    "kind": "event",
+    "start": ""
+  },
+  {
+    "title": "Season launch / information session",
+    "kind": "event",
+    "start": ""
+  },
+  {
+    "title": "School outreach / demonstration",
+    "kind": "event",
+    "start": ""
   }
 ]

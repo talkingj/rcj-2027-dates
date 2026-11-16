@@ -4,26 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RCJ NSW 2027 Season Draft Dates</title>
-<meta name="description" content="RoboCup Junior NSW draft dates for 2027.">
+<meta name="description" content="RoboCup Junior NSW draft dates for the 2027 season.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
 <style>
 /* RCJNSW design system: white page, green-led, Poppins display + Inter body.
-   Layout: header and mint "next up" card, then the brand schedule list beside a year calendar. */
+   Layout: header + next-date card, a season timeline on the school-term rail, then dates grouped by term. */
 :root{
   color-scheme:light;
   --green-900:#064a30; --green-800:#075c3c; --green-700:#0b8f58; --green-200:#bdeccf; --green-100:#ebfbee;
   --charcoal:#1a1c1a; --gray-700:#3f463f; --gray-500:#6b736c; --gray-300:#c7d0c8; --gray-200:#e2e9e3; --white:#ffffff;
   --font-display:'Poppins','Segoe UI',sans-serif;
   --font-body:'Inter','Segoe UI',sans-serif;
+  --hatch:repeating-linear-gradient(135deg,var(--green-100) 0 5px,var(--white) 5px 10px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--white)}
 body{background:var(--white);color:var(--charcoal);font-family:var(--font-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--font-display);letter-spacing:-.01em;text-wrap:balance}
-a{color:var(--green-700)}
-a:hover{color:var(--green-800)}
+button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--green-700);outline-offset:2px;border-radius:4px}
 
 .wrap{max-width:1160px;margin:0 auto;padding:40px 24px 56px}
@@ -33,79 +33,82 @@ a:hover{color:var(--green-800)}
 .top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:32px 48px;align-items:end;padding-bottom:40px}
 @media (max-width:860px){.top{grid-template-columns:minmax(0,1fr)}}
 .logo{height:56px;width:auto;display:block;margin-bottom:28px}
-.org{font-family:var(--font-body);font-weight:600;font-size:17px;color:var(--green-700)}
-h1{font-size:clamp(36px,6.4vw,64px);line-height:1.05;font-weight:800;color:var(--charcoal);margin-top:4px}
-
+.org{font-weight:600;font-size:17px;color:var(--green-700)}
+h1{font-size:clamp(36px,6.4vw,64px);line-height:1.05;font-weight:800;margin-top:4px}
 .sub{color:var(--gray-700);margin-top:12px}
 
-/* Next up: brand key-details card */
 .next{background:var(--green-100);border-radius:20px;padding:24px 28px}
-.next[hidden]{display:none}
 .next-label{font-weight:600;font-size:14px;color:var(--green-800);display:flex;justify-content:space-between;gap:12px}
 .next-when{font-family:var(--font-display);font-weight:700;font-size:28px;line-height:1.15;color:var(--green-700);margin-top:8px}
 .next-title{font-weight:600;margin-top:4px}
 .kd{display:grid;gap:6px;margin-top:12px;font-size:15px;color:var(--gray-700)}
-.kd div{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start}
+.kd div{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px}
 .kd svg{width:18px;height:18px;margin-top:2px;stroke:var(--green-700);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:56px;border-top:1px solid var(--gray-200);padding-top:40px}
-@media (max-width:960px){main{grid-template-columns:minmax(0,1fr);gap:48px}}
+section.block{border-top:1px solid var(--gray-200);padding-top:36px;margin-top:8px}
+section.block + section.block{margin-top:48px}
+.block-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;margin-bottom:20px}
 h2{font-size:22px;font-weight:600;color:var(--green-700)}
 
-/* Schedule list: bold green date column + thin divider rows (brand schedule table) */
-.month{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--charcoal);padding:28px 0 4px}
-.month:first-child{padding-top:16px}
-.month span{color:var(--gray-500);font-weight:500}
-.row{display:grid;grid-template-columns:136px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--gray-200);transition:background-color .6s ease-out}
+/* Legend */
+.key{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--gray-700)}
+.key span{display:inline-flex;align-items:center;gap:8px}
+.sw{display:inline-block;flex:none}
+.sw.ev{width:12px;height:12px;border-radius:999px;background:var(--green-700)}
+.sw.pos{width:26px;height:14px;border-radius:4px;background:var(--hatch);border:1.5px dashed var(--green-700)}
+.sw.hol{width:26px;height:14px;border-radius:4px;background:var(--green-200)}
+.sw.term{width:26px;height:14px;border-radius:4px;background:var(--white);border:1px solid var(--gray-300)}
+
+/* Season timeline */
+.tl-scroll{overflow-x:auto;padding-bottom:8px}
+.tl{position:relative;min-width:980px;padding:0 4px}
+.lanes{position:relative}
+.it{position:absolute;height:26px;display:flex;align-items:center;border:0;background:none;padding:0;cursor:pointer;white-space:nowrap;font-size:13px;font-weight:600;color:var(--charcoal);z-index:1}
+.it .lab{position:absolute;top:50%;transform:translateY(-50%);left:calc(100% + 3px);background:var(--white);padding:1px 3px;border-radius:4px}
+.it.flip .lab{left:auto;right:calc(100% + 3px)}
+.it.in .lab{position:static;transform:none;padding:0 8px;background:none}
+.it.ev{width:12px}
+.it.ev::before{content:"";width:12px;height:12px;border-radius:999px;background:var(--green-700);box-shadow:0 0 0 3px var(--white)}
+.it.pos{border-radius:6px;background:var(--hatch);border:1.5px dashed var(--green-700);color:var(--green-900)}
+.it.pos .lab{font-style:italic}
+.it:hover .lab{text-decoration:underline;text-underline-offset:3px}
+.stem{position:absolute;width:0;border-left:1px solid var(--gray-300)}
+.stem.pos{border-left-style:dashed;border-left-color:var(--green-700)}
+
+.rail{position:relative;height:34px;border-radius:8px;background:var(--green-200)}
+.seg{position:absolute;top:0;bottom:0;background:var(--white);border:1px solid var(--gray-300);border-radius:6px;display:flex;align-items:center;padding-left:8px;font-family:var(--font-display);font-weight:600;font-size:13px;color:var(--green-800);overflow:hidden}
+.wk{position:absolute;top:8px;bottom:8px;border-left:1px solid var(--gray-200)}
+.wknum{position:relative;height:16px;font-size:10px;color:var(--gray-500);font-variant-numeric:tabular-nums}
+.wknum span{position:absolute;transform:translateX(-50%);top:2px}
+.axis{position:relative;height:28px;border-top:1px solid var(--gray-200);margin-top:4px}
+.axis span{position:absolute;top:6px;font-size:12px;font-weight:600;color:var(--gray-700)}
+.axis i{position:absolute;top:0;height:6px;border-left:1px solid var(--gray-300)}
+.tl-hint{display:none;font-size:13px;color:var(--gray-500);margin-top:4px}
+@media (max-width:1020px){.tl-hint{display:block}}
+
+/* Terms */
+.terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 56px}
+@media (max-width:860px){.terms{grid-template-columns:minmax(0,1fr)}}
+.term h3{font-size:20px;font-weight:600;color:var(--charcoal)}
+.term .range{font-size:14px;color:var(--gray-500);margin-top:2px;padding-bottom:8px;border-bottom:2px solid var(--charcoal)}
+.row{display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--gray-200);transition:background-color .6s ease-out}
 .row.flash{background:var(--green-100);transition:none}
 .d{font-family:var(--font-display);font-weight:600;color:var(--green-700);font-variant-numeric:tabular-nums;line-height:1.35}
-.d small{display:block;font-family:var(--font-body);font-weight:500;font-size:13px;color:var(--gray-500)}
-.row.hol .d{color:var(--green-800)}
-.row.hol .d b{font-weight:600;font-size:15px;white-space:nowrap;background:var(--green-200);border-radius:6px;padding:1px 6px;margin-left:-6px}
+.d small{display:block;font-family:var(--font-body);font-weight:500;font-size:13px;color:var(--gray-500);margin-top:2px}
 .t{font-weight:600}
-.t.tbc{font-weight:500;color:var(--gray-500)}
-.row.tbd .d{color:var(--gray-500);font-weight:500}
-.row.pos .d b{font-weight:600;font-size:15px;white-space:nowrap;border:1.5px dashed var(--green-700);border-radius:6px;padding:0 5px;margin-left:-6px}
-.st.pos{background:var(--white);box-shadow:inset 0 0 0 1px var(--green-200)}
-.row.hol .t{font-weight:500;color:var(--gray-700)}
-.st{display:inline-block;white-space:nowrap;font-size:12px;font-weight:600;color:var(--green-800);background:var(--green-100);border-radius:6px;padding:1px 6px;margin-left:8px;vertical-align:1px}
-.row.done .t::after{content:"Done";font-size:12px;font-weight:600;color:var(--green-800);background:var(--green-100);border-radius:6px;padding:1px 6px;margin-left:8px;vertical-align:1px}
 .m{font-size:14px;color:var(--gray-700);margin-top:2px}
 .m span+span::before{content:"\00B7";margin:0 8px;color:var(--gray-300)}
-@media (max-width:420px){.row{grid-template-columns:120px minmax(0,1fr);gap:12px}}
-.note{color:var(--gray-500);font-size:15px;padding-top:16px}
-
-/* Year calendar */
-.cal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.yr{display:flex;align-items:center;gap:4px}
-.yr button{width:44px;height:44px;border-radius:999px;border:0;background:transparent;color:var(--green-700);cursor:pointer;display:grid;place-items:center}
-.yr button:hover{background:var(--green-100)}
-.yr svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.months{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px;margin-top:16px}
-@media (max-width:560px){.months{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}}
-.mo h3{font-size:15px;font-weight:600;color:var(--charcoal);margin-bottom:6px}
-.grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));font-variant-numeric:tabular-nums}
-.dow{font-size:11px;font-weight:500;color:var(--gray-500);text-align:center;padding-bottom:4px}
-.day{position:relative;height:30px;display:grid;place-items:center;font:inherit;font-size:13px;color:var(--charcoal);border:0;background:transparent;padding:0}
-.day span{position:relative;z-index:1;width:26px;height:26px;display:grid;place-items:center;border-radius:999px}
-.day.we{color:var(--gray-500)}
-.day.hol::before{content:"";position:absolute;inset:3px 0;background:var(--green-200)}
-.day.hol.hs::before{left:2px;border-radius:999px 0 0 999px}
-.day.hol.he::before{right:2px;border-radius:0 999px 999px 0}
-.day.pos::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:0;border-bottom:2px dashed var(--green-700)}
-.day.pos.ps::after{left:6px}
-.day.pos.pe::after{right:6px}
-.day.ev,.day.pos{cursor:pointer}
-.day.ev span{background:var(--green-700);color:var(--white);font-weight:600}
-.day.ev.done span{background:var(--white);color:var(--green-700);box-shadow:inset 0 0 0 1.5px var(--green-700)}
-.day.ev:hover span{background:var(--green-800)}
-.day.today span{box-shadow:0 0 0 2px var(--charcoal)}
-.key{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--gray-700);margin-top:24px}
-.key span{display:inline-flex;align-items:center;gap:8px}
-.key i{width:14px;height:14px;border-radius:999px;background:var(--green-700)}
-.key i.h{border-radius:3px;background:var(--green-200)}
-.key i.p{width:18px;height:0;border-radius:0;background:none;border-bottom:2px dashed var(--green-700)}
-.key i.n{background:var(--white);box-shadow:0 0 0 2px var(--charcoal);width:12px;height:12px}
+.row.pos .d{color:var(--green-900)}
+.row.pos .d b{display:inline-block;font-weight:600;font-size:15px;white-space:nowrap;background:var(--hatch);border:1.5px dashed var(--green-700);border-radius:6px;padding:0 6px;margin-left:-7px}
+.row.pos .t{font-style:italic}
+.tag{display:inline-block;white-space:nowrap;font-style:normal;font-size:12px;font-weight:600;color:var(--green-800);border:1.5px dashed var(--green-700);border-radius:6px;padding:0 6px;margin-left:8px;vertical-align:1px}
+.row.hol{background:var(--green-100);border-bottom:0;border-radius:8px;padding:10px 12px;margin-top:12px;grid-template-columns:120px minmax(0,1fr)}
+.row.hol .d{color:var(--green-800)}
+.row.hol .t{font-weight:500;color:var(--gray-700)}
+@media (max-width:420px){.row{grid-template-columns:112px minmax(0,1fr);gap:12px}.row.hol{grid-template-columns:100px minmax(0,1fr)}}
+.tbc{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0 56px}
+.tbc .row{grid-template-columns:minmax(0,1fr)}
+.note{color:var(--gray-500);font-size:15px}
 
 footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);font-size:13px;color:var(--gray-500)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
@@ -123,51 +126,57 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
     <aside class="next" id="next" aria-label="Next date" hidden></aside>
   </header>
 
-  <main>
-    <section aria-labelledby="listTitle">
-      <h2 id="listTitle">Key dates</h2>
-      <div id="list"><p class="note">Loading dates…</p></div>
-    </section>
-    <section aria-labelledby="yearTitle">
-      <div class="cal-head">
-        <h2 id="yearTitle">2027</h2>
-        <div class="yr">
-          <button type="button" id="prevYr" aria-label="Previous year"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-          <button type="button" id="nextYr" aria-label="Next year"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-        </div>
-      </div>
-      <div class="months" id="months"></div>
+  <section class="block" aria-labelledby="tlTitle">
+    <div class="block-head">
+      <h2 id="tlTitle">Season at a glance</h2>
       <div class="key">
-        <span><i></i>Event</span>
-        <span><i class="h"></i>NSW school holidays</span>
-        <span><i class="p"></i>Possible dates</span>
-        <span><i class="n"></i>Today</span>
+        <span><i class="sw ev"></i>Set date</span>
+        <span><i class="sw pos"></i>Possible dates, not yet set</span>
+        <span><i class="sw term"></i>School term, with week numbers</span>
+        <span><i class="sw hol"></i>NSW school holidays</span>
       </div>
-    </section>
-  </main>
+    </div>
+    <div class="tl-scroll" tabindex="0" aria-label="Season timeline, scrolls sideways">
+      <div class="tl" id="tl">
+        <div class="lanes" id="lanes"></div>
+        <div class="rail" id="rail"></div>
+        <div class="wknum" id="wknum" aria-hidden="true"></div>
+        <div class="axis" id="axis" aria-hidden="true"></div>
+      </div>
+    </div>
+    <p class="tl-hint">Scroll sideways to see the whole year.</p>
+  </section>
 
-  <footer>
-    <span>RoboCup Junior Australia &middot; NSW</span>
-  </footer>
+  <section class="block" aria-labelledby="termTitle">
+    <div class="block-head"><h2 id="termTitle">Dates by term</h2></div>
+    <div class="terms" id="terms"><p class="note">Loading dates…</p></div>
+  </section>
+
+  <section class="block" id="tbcBlock" aria-labelledby="tbcTitle" hidden>
+    <div class="block-head"><h2 id="tbcTitle">Still to be scheduled</h2></div>
+    <div class="tbc" id="tbc"></div>
+  </section>
+
+  <footer>RoboCup Junior Australia &middot; NSW</footer>
 </div>
 
 <script>
 (() => {
   const $ = s => document.querySelector(s);
+  const YEAR = 2027;
   const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   const MON = MONTHS.map(m => m.slice(0, 3));
   const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   const DOW = DAYS.map(d => d.slice(0, 3));
+  const DAY = 864e5;
   const ICON = {
-    cal: '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
     time: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+    pin: '<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
     user: '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>',
-    pin: '<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>'
+    note: '<svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>'
   };
 
-  let events = [];
-  let undated = [];
-  let year = 2027;
+  let terms = [], hols = [], items = [], undated = [];
 
   const parse = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
   const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -175,133 +184,188 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
   const todayIso = iso(today);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const lastDay = e => e.end || e.start;
-  const titleOf = e => e.title || (e.kind === 'holiday' ? 'School holidays' : '');
+  const monday = d => { const x = new Date(d); x.setDate(x.getDate() - (x.getDay() + 6) % 7); return x; };
+  const sameMonth = (a, b) => a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear();
 
-  // Date column: "6 Feb" over "Saturday"; ranges "12–23 Apr" over "Mon to Fri"
-  function dateCell(e) {
-    const a = parse(e.start);
-    if (!e.end || e.end === e.start) return `${a.getDate()} ${MON[a.getMonth()]}<small>${DAYS[a.getDay()]}</small>`;
-    const b = parse(e.end);
-    const span = a.getMonth() === b.getMonth() && a.getFullYear() === b.getFullYear()
-      ? `${a.getDate()}–${b.getDate()} ${MON[b.getMonth()]}`
-      : `${a.getDate()} ${MON[a.getMonth()]}–${b.getDate()} ${MON[b.getMonth()]}`;
-    const yrs = b.getFullYear() !== a.getFullYear() ? `, until ${b.getFullYear()}` : '';
-    if (e.kind === 'possible') return `<b>${span}</b>`;
-    return `<b>${span}</b><small>${DOW[a.getDay()]} to ${DOW[b.getDay()]}${yrs}</small>`;
+  function spanText(e) {
+    const a = parse(e.start), b = parse(lastDay(e));
+    if (e.start === lastDay(e)) return `${a.getDate()} ${MON[a.getMonth()]}`;
+    return sameMonth(a, b) ? `${a.getDate()}–${b.getDate()} ${MON[b.getMonth()]}` : `${a.getDate()} ${MON[a.getMonth()]}–${b.getDate()} ${MON[b.getMonth()]}`;
   }
-  function longDate(e) {
-    const a = parse(e.start);
-    const f = d => `${DOW[d.getDay()]} ${d.getDate()} ${MONTHS[d.getMonth()]}`;
-    return e.end && e.end !== e.start ? `${f(a)} to ${f(parse(e.end))}` : `${f(a)} ${a.getFullYear()}`;
-  }
-
-  const sorted = () => [...events].sort((a, b) => a.start.localeCompare(b.start));
-
-  function renderList() {
-    if (!events.length) { $('#list').innerHTML = '<p class="note">No dates yet.</p>'; return; }
-    let html = '', last = '';
-    for (const e of sorted()) {
-      const d = parse(e.start), key = d.getFullYear() + '-' + d.getMonth();
-      if (key !== last) {
-        html += `<h3 class="month">${MONTHS[d.getMonth()]} <span>${d.getFullYear()}</span></h3>`;
-        last = key;
-      }
-      const hol = e.kind === 'holiday', pos = e.kind === 'possible';
-      const t = titleOf(e);
-      const meta = [e.time, e.place, e.note, e.coordinator && `Coordinator: ${e.coordinator}`].filter(Boolean).map(x => `<span>${esc(x)}</span>`).join('');
-      html += `<div class="row${hol ? ' hol' : ''}${pos ? ' pos' : ''}${e.done ? ' done' : ''}" data-id="${e.id}">
-        <div class="d">${dateCell(e)}</div>
-        <div><p class="t${t ? '' : ' tbc'}">${t ? esc(t) : 'Event name TBC'}${pos ? '<span class="st pos">Possible dates</span>' : ''}${e.status ? `<span class="st">${esc(e.status)}</span>` : ''}</p>${meta ? `<p class="m">${meta}</p>` : ''}</div>
-      </div>`;
-    }
-    if (undated.length) {
-      html += '<h3 class="month">Date TBC</h3>';
-      for (const e of undated) html += `<div class="row tbd"><div class="d">TBC</div><div><p class="t">${esc(e.title)}</p>${e.note ? `<p class="m"><span>${esc(e.note)}</span></p>` : ''}</div></div>`;
-    }
-    $('#list').innerHTML = html;
+  const termOf = d => terms.find(t => d >= t.start && d <= t.end);
+  const weekIn = (t, d) => Math.floor((monday(parse(d)) - monday(parse(t.start))) / (7 * DAY)) + 1;
+  function weekLabel(e) {
+    const t = termOf(e.start);
+    if (!t) return '';
+    const w1 = weekIn(t, e.start);
+    if (e.start === lastDay(e)) return `${t.title}, week ${w1}`;
+    if (termOf(lastDay(e)) !== t) return '';
+    const w2 = weekIn(t, lastDay(e));
+    return w1 === w2 ? `${t.title}, week ${w1}` : `${t.title}, weeks ${w1}–${w2}`;
   }
 
+  // ----- Next date card -----
   function renderNext() {
+    const n = items.find(e => e.kind === 'event' && lastDay(e) >= todayIso);
     const box = $('#next');
-    const n = sorted().find(e => e.kind === 'event' && !e.done && lastDay(e) >= todayIso);
     if (!n) { box.hidden = true; return; }
-    const days = Math.round((parse(n.start) - today) / 864e5);
+    const a = parse(n.start), days = Math.round((a - today) / DAY);
     const when = days <= 0 ? 'Today' : days === 1 ? 'Tomorrow' : `In ${days} days`;
     const rows = [
       n.time && `<div>${ICON.time}<span>${esc(n.time)}</span></div>`,
       n.place && `<div>${ICON.pin}<span>${esc(n.place)}</span></div>`,
-      n.note && `<div>${ICON.cal}<span>${esc(n.note)}</span></div>`,
-      n.coordinator && `<div>${ICON.user}<span>Coordinator: ${esc(n.coordinator)}</span></div>`
+      n.coordinator && `<div>${ICON.user}<span>Coordinator: ${esc(n.coordinator)}</span></div>`,
+      n.note && `<div>${ICON.note}<span>${esc(n.note)}</span></div>`
     ].filter(Boolean).join('');
     box.innerHTML = `<p class="next-label"><span>Next date</span><span>${when}</span></p>
-      <p class="next-when">${longDate(n)}</p>
-      <p class="next-title">${n.title ? esc(n.title) : 'Event name TBC'}</p>
-      ${rows ? `<div class="kd">${rows}</div>` : ''}`;
+      <p class="next-when">${DOW[a.getDay()]} ${a.getDate()} ${MONTHS[a.getMonth()]} ${a.getFullYear()}</p>
+      <p class="next-title">${esc(n.title)}</p>${rows ? `<div class="kd">${rows}</div>` : ''}`;
     box.hidden = false;
   }
 
-  function renderYear() {
-    $('#yearTitle').textContent = year;
-    const idx = new Map();
-    for (const e of events) {
-      for (let d = parse(e.start), end = parse(lastDay(e)); d <= end; d.setDate(d.getDate() + 1)) {
-        const k = iso(d), m = idx.get(k) || {ev: []};
-        if (e.kind === 'holiday') { m.hol = true; if (k === e.start) m.hs = true; if (k === lastDay(e)) m.he = true; }
-        else if (e.kind === 'possible') { (m.pos ||= []).push(e); if (k === e.start) m.ps = true; if (k === lastDay(e)) m.pe = true; }
-        else m.ev.push(e);
-        idx.set(k, m);
+  // ----- Timeline -----
+  const measure = (() => {
+    const c = document.createElement('canvas').getContext('2d');
+    return (t, italic) => { c.font = `${italic ? 'italic ' : ''}600 13px Inter, "Segoe UI", sans-serif`; return Math.ceil(c.measureText(t).width); };
+  })();
+
+  function renderTimeline() {
+    const tl = $('#tl');
+    const W = tl.clientWidth - 8;
+    const y0 = new Date(YEAR, 0, 1), y1 = new Date(YEAR + 1, 0, 1), span = (y1 - y0) / DAY;
+    const px = d => Math.max(0, Math.min(W, ((d - y0) / DAY) / span * W));
+    const startPx = s => px(parse(s));
+    const endPx = s => { const d = parse(s); d.setDate(d.getDate() + 1); return px(d); };
+    const dayW = W / span;
+
+    // Rail: the mint base is holidays; terms sit on top as white segments with week ticks
+    let rail = '', wn = '';
+    for (const t of terms) {
+      const l = startPx(t.start), w = endPx(t.end) - l;
+      let wk = '';
+      for (let d = monday(parse(t.start)), i = 1; d <= parse(t.end); d.setDate(d.getDate() + 7), i++) {
+        if (i > 1) wk += `<i class="wk" style="left:${px(d) - l}px"></i>`;
+        const mid = new Date(d); mid.setDate(mid.getDate() + 3);
+        if (i > 1) wn += `<span style="left:${px(mid)}px">${i}</span>`;
       }
+      rail += `<div class="seg" style="left:${l}px;width:${w}px" title="${esc(t.title)}: ${esc(spanText(t))}">${wk}<span style="position:relative">${esc(t.title)}</span></div>`;
     }
+    $('#rail').innerHTML = rail;
+    $('#wknum').innerHTML = wn;
+
+    let ax = '';
+    for (let m = 0; m < 12; m++) {
+      const a = px(new Date(YEAR, m, 1));
+      ax += `<i style="left:${a}px"></i><span style="left:${a + 6}px">${MON[m]}</span>`;
+    }
+    $('#axis').innerHTML = ax;
+
+    // Pack items into lanes so no two labels collide
+    const placed = [], lanes = [];
+    for (const e of items) {
+      const pos = e.kind === 'possible';
+      const lw = measure(e.title, pos);
+      let x0, x1, cls, ext0, ext1;
+      if (!pos) {
+        const c = startPx(e.start) + dayW / 2;
+        x0 = c - 6; x1 = c + 6; cls = 'ev';
+        ext0 = x0; ext1 = x1 + 6 + lw;
+        if (ext1 > W) { cls += ' flip'; ext0 = x0 - 6 - lw; ext1 = x1; }
+      } else {
+        x0 = startPx(e.start); x1 = Math.max(endPx(lastDay(e)), x0 + 14); cls = 'pos';
+        if (x1 - x0 >= lw + 20) { cls += ' in'; ext0 = x0; ext1 = x1; }
+        else { ext0 = x0; ext1 = x1 + 6 + lw; if (ext1 > W) { cls += ' flip'; ext0 = x0 - 6 - lw; ext1 = x1; } }
+      }
+      let lane = lanes.findIndex(end => end + 12 <= ext0);
+      if (lane === -1) { lane = lanes.length; lanes.push(0); }
+      lanes[lane] = ext1;
+      placed.push({e, x0, x1, cls, lane, pos});
+    }
+    const LH = 34, n = lanes.length, H = n * LH + 10;
     let html = '';
-    for (let mo = 0; mo < 12; mo++) {
-      const lead = (new Date(year, mo, 1).getDay() + 6) % 7;
-      const n = new Date(year, mo + 1, 0).getDate();
-      let g = ['M','T','W','T','F','S','S'].map(x => `<div class="dow" aria-hidden="true">${x}</div>`).join('') + '<div></div>'.repeat(lead);
-      for (let d = 1; d <= n; d++) {
-        const date = new Date(year, mo, d), k = iso(date), info = idx.get(k), wd = date.getDay();
-        const cls = ['day'];
-        let label = `${d} ${MONTHS[mo]}`;
-        if (wd === 0 || wd === 6) cls.push('we');
-        if (k === todayIso) { cls.push('today'); label += ', today'; }
-        if (info?.hol) { cls.push('hol'); if (info.hs || wd === 1) cls.push('hs'); if (info.he || wd === 0) cls.push('he'); label += ', school holidays'; }
-        if (info?.pos) { cls.push('pos'); if (info.ps || wd === 1) cls.push('ps'); if (info.pe || wd === 0) cls.push('pe'); label += ', possible: ' + info.pos.map(e => e.title).join(', '); }
-        if (info?.ev.length || info?.pos) {
-          if (info.ev.length) { cls.push('ev'); if (info.ev.every(e => e.done)) cls.push('done'); }
-          if (info.ev.length) label += ', ' + info.ev.map(e => e.title || 'event').join(', ');
-          g += `<button type="button" class="${cls.join(' ')}" data-date="${k}" aria-label="${esc(label)}" title="${esc(label)}"><span>${d}</span></button>`;
-        } else {
-          g += `<div class="${cls.join(' ')}" title="${esc(label)}"><span>${d}</span></div>`;
-        }
+    for (const p of placed) {
+      const top = (n - 1 - p.lane) * LH; // lane 0 sits nearest the rail
+      const stemTop = top + 26, stemH = H - stemTop;
+      if (p.pos) {
+        html += `<i class="stem pos" style="left:${p.x0}px;top:${stemTop}px;height:${stemH}px"></i><i class="stem pos" style="left:${p.x1 - 1}px;top:${stemTop}px;height:${stemH}px"></i>`;
+      } else {
+        html += `<i class="stem" style="left:${(p.x0 + p.x1) / 2}px;top:${stemTop - 7}px;height:${stemH + 7}px"></i>`;
       }
-      html += `<div class="mo"><h3>${MONTHS[mo]}</h3><div class="grid">${g}</div></div>`;
+      const tip = `${p.e.title}: ${p.pos ? 'possibly ' : ''}${spanText(p.e)}`;
+      html += `<button type="button" class="it ${p.cls}" data-id="${p.e.id}" style="left:${p.x0}px;top:${top}px;${p.pos ? `width:${p.x1 - p.x0}px` : ''}" title="${esc(tip)}" aria-label="${esc(tip)}"><span class="lab">${esc(p.e.title)}</span></button>`;
     }
-    $('#months').innerHTML = html;
+    const lanesEl = $('#lanes');
+    lanesEl.style.height = H + 'px';
+    lanesEl.innerHTML = html;
   }
 
-  $('#prevYr').onclick = () => { year--; renderYear(); };
-  $('#nextYr').onclick = () => { year++; renderYear(); };
-  $('#months').addEventListener('click', e => {
-    const b = e.target.closest('button.day'); if (!b) return;
-    const k = b.dataset.date;
-    const inside = x => k >= x.start && k <= lastDay(x);
-    const hit = sorted().find(x => x.kind === 'event' && inside(x)) || sorted().find(x => x.kind === 'possible' && inside(x));
-    const row = hit && document.querySelector(`.row[data-id="${hit.id}"]`);
-    if (!row) return;
+  // ----- Term blocks -----
+  function rowHtml(e) {
+    const pos = e.kind === 'possible';
+    const a = parse(e.start);
+    const wl = weekLabel(e);
+    const d = pos
+      ? `<b>${spanText(e)}</b><small>${wl || 'Possible window'}</small>`
+      : `${spanText(e)}<small>${DAYS[a.getDay()]}${wl ? ', week ' + weekIn(termOf(e.start), e.start) : ''}</small>`;
+    const meta = [e.time, e.place, e.coordinator && `Coordinator: ${e.coordinator}`, e.note].filter(Boolean).map(x => `<span>${esc(x)}</span>`).join('');
+    return `<div class="row${pos ? ' pos' : ''}" data-id="${e.id}">
+      <div class="d">${d}</div>
+      <div><p class="t">${esc(e.title)}${pos ? '<span class="tag">Possible dates</span>' : ''}</p>${meta ? `<p class="m">${meta}</p>` : ''}</div>
+    </div>`;
+  }
+  const holRow = h => `<div class="row hol"><div class="d">${spanText(h)}</div><div><p class="t">${esc(h.title)}</p></div></div>`;
+
+  function renderTerms() {
+    const groups = terms.map(t => ({t, list: [], after: null}));
+    for (const e of items) {
+      const a = parse(e.start), b = parse(lastDay(e));
+      const mid = iso(new Date((a.getTime() + b.getTime()) / 2));
+      let gi = groups.findIndex(g => mid <= g.t.end);
+      if (gi === -1) gi = groups.length - 1;
+      groups[gi].list.push(e);
+    }
+    for (const h of hols) {
+      const gi = groups.map(g => g.t.end < h.start).lastIndexOf(true);
+      if (gi >= 0) groups[gi].after = h;
+    }
+    $('#terms').innerHTML = groups.map(g => {
+      const s = parse(g.t.start), e = parse(g.t.end);
+      return `<div class="term"><h3>${esc(g.t.title)}</h3>
+        <p class="range">${DOW[s.getDay()]} ${s.getDate()} ${MON[s.getMonth()]} to ${DOW[e.getDay()]} ${e.getDate()} ${MON[e.getMonth()]} · ${weekIn(g.t, g.t.end)} weeks</p>
+        ${g.list.map(rowHtml).join('') || '<p class="note" style="padding:12px 0">Nothing scheduled yet.</p>'}
+        ${g.after ? holRow(g.after) : ''}</div>`;
+    }).join('');
+  }
+
+  function renderTbc() {
+    $('#tbcBlock').hidden = !undated.length;
+    $('#tbc').innerHTML = undated.map(e => `<div class="row"><div><p class="t">${esc(e.title)}</p>${e.note ? `<p class="m">${esc(e.note)}</p>` : ''}</div></div>`).join('');
+  }
+
+  // Timeline item → its row below
+  $('#lanes').addEventListener('click', ev => {
+    const b = ev.target.closest('.it'); if (!b) return;
+    const row = document.querySelector(`.row[data-id="${b.dataset.id}"]`); if (!row) return;
     row.scrollIntoView({block: 'center', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
-    row.classList.add('flash');
-    setTimeout(() => row.classList.remove('flash'), 900);
+    row.classList.add('flash'); setTimeout(() => row.classList.remove('flash'), 900);
   });
 
-  renderYear();
+  let rt;
+  new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(() => terms.length && renderTimeline(), 60); }).observe($('#tl'));
+
   fetch('dates.json', {cache: 'no-cache'})
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(data => {
       const all = data.map((e, i) => ({id: 'e' + i, ...e}));
-      events = all.filter(e => e.start);
+      const byStart = (a, b) => a.start.localeCompare(b.start);
+      terms = all.filter(e => e.kind === 'term').sort(byStart);
+      hols = all.filter(e => e.kind === 'holiday').sort(byStart);
+      items = all.filter(e => e.start && (e.kind === 'event' || e.kind === 'possible')).sort(byStart);
       undated = all.filter(e => !e.start);
-      renderList(); renderNext(); renderYear();
+      renderNext(); renderTerms(); renderTbc();
+      (document.fonts?.ready || Promise.resolve()).then(renderTimeline);
     })
-    .catch(() => { $('#list').innerHTML = '<p class="note">Couldn’t load the dates. Refresh the page to try again.</p>'; });
+    .catch(() => { $('#terms').innerHTML = '<p class="note">Couldn’t load the dates. Refresh the page to try again.</p>'; });
 })();
 </script>
 </body>
