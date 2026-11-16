@@ -1,0 +1,80 @@
+[
+  {
+    "title": "",
+    "kind": "event",
+    "start": "2026-12-02",
+    "done": false
+  },
+  {
+    "title": "",
+    "kind": "event",
+    "start": "2027-02-06",
+    "done": false
+  },
+  {
+    "title": "",
+    "kind": "event",
+    "start": "2027-02-22",
+    "time": "7:30pm",
+    "place": "Online",
+    "done": false
+  },
+  {
+    "title": "",
+    "kind": "event",
+    "start": "2027-03-20",
+    "time": "1–4pm",
+    "place": "Melrose Park Public School",
+    "done": false
+  },
+  {
+    "title": "School holidays",
+    "kind": "holiday",
+    "start": "2027-04-12",
+    "end": "2027-04-23",
+    "done": false
+  },
+  {
+    "title": "",
+    "kind": "event",
+    "start": "2027-05-15",
+    "time": "1–4pm",
+    "place": "TBA (Melrose? MLC?)",
+    "done": false
+  },
+  {
+    "title": "School holidays",
+    "kind": "holiday",
+    "start": "2027-07-05",
+    "end": "2027-07-16",
+    "done": false
+  },
+  {
+    "title": "",
+    "kind": "event",
+    "start": "2027-07-29",
+    "note": "Week 2 Term 3",
+    "done": false
+  },
+  {
+    "title": "",
+    "kind": "event",
+    "start": "2027-07-31",
+    "place": "Thomas Hassall Anglican College",
+    "done": false
+  },
+  {
+    "title": "School holidays",
+    "kind": "holiday",
+    "start": "2027-09-27",
+    "end": "2027-10-08",
+    "done": false
+  },
+  {
+    "title": "School holidays",
+    "kind": "holiday",
+    "start": "2027-12-21",
+    "end": "2028-01-28",
+    "done": false
+  }
+]
