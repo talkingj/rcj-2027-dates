@@ -1,18 +1,20 @@
 [
   {
-    "title": "",
+    "title": "NSW AGM",
     "kind": "event",
     "start": "2026-12-02",
+    "place": "Online",
     "done": false
   },
   {
-    "title": "",
+    "title": "Planning Day",
     "kind": "event",
     "start": "2027-02-06",
+    "note": "Working bee",
     "done": false
   },
   {
-    "title": "",
+    "title": "National Launch Day",
     "kind": "event",
     "start": "2027-02-22",
     "time": "7:30pm",
@@ -20,7 +22,7 @@
     "done": false
   },
   {
-    "title": "",
+    "title": "Teacher Workshop",
     "kind": "event",
     "start": "2027-03-20",
     "time": "1–4pm",
@@ -28,14 +30,14 @@
     "done": false
   },
   {
-    "title": "School holidays",
+    "title": "Autumn school holidays",
     "kind": "holiday",
     "start": "2027-04-12",
     "end": "2027-04-23",
     "done": false
   },
   {
-    "title": "",
+    "title": "Term 2 Workshop",
     "kind": "event",
     "start": "2027-05-15",
     "time": "1–4pm",
@@ -43,38 +45,73 @@
     "done": false
   },
   {
-    "title": "School holidays",
+    "title": "Winter school holidays",
     "kind": "holiday",
     "start": "2027-07-05",
     "end": "2027-07-16",
     "done": false
   },
   {
-    "title": "",
+    "title": "Hunter Regionals",
     "kind": "event",
     "start": "2027-07-29",
     "note": "Week 2 Term 3",
     "done": false
   },
   {
-    "title": "",
+    "title": "Sydney Regionals",
     "kind": "event",
     "start": "2027-07-31",
     "place": "Thomas Hassall Anglican College",
     "done": false
   },
   {
-    "title": "School holidays",
+    "title": "Spring school holidays",
     "kind": "holiday",
     "start": "2027-09-27",
     "end": "2027-10-08",
     "done": false
   },
   {
-    "title": "School holidays",
+    "title": "Summer school holidays",
     "kind": "holiday",
     "start": "2027-12-21",
     "end": "2028-01-28",
+    "done": false
+  },
+  {
+    "title": "Spike Prime Challenge due",
+    "kind": "event",
+    "start": "",
+    "note": "2025: Fri 27 June",
+    "done": false
+  },
+  {
+    "title": "Term 2 Workshop",
+    "kind": "event",
+    "start": "",
+    "note": "2026: Sat 27 June, 1–4pm, MLC Burwood",
+    "done": false
+  },
+  {
+    "title": "State Competition",
+    "kind": "event",
+    "start": "",
+    "note": "2026: Mon–Tue 24–25 August",
+    "done": false
+  },
+  {
+    "title": "Nationals",
+    "kind": "event",
+    "start": "",
+    "note": "2025: 10–12 October, Shirley Smith High School ACT",
+    "done": false
+  },
+  {
+    "title": "Sumo Competition",
+    "kind": "event",
+    "start": "",
+    "note": "2026: 18 November, Trinity Grammar Preparatory School Strathfield",
     "done": false
   }
 ]

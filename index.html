@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RCJ NSW 2027 Dates</title>
-<meta name="description" content="RoboCup Junior NSW key dates for 2027.">
+<title>RCJ NSW 2027 Draft Dates</title>
+<meta name="description" content="RoboCup Junior NSW draft dates for 2027.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
@@ -34,7 +34,9 @@ a:hover{color:var(--green-800)}
 @media (max-width:860px){.top{grid-template-columns:minmax(0,1fr)}}
 .logo{height:56px;width:auto;display:block;margin-bottom:28px}
 .org{font-family:var(--font-body);font-weight:600;font-size:17px;color:var(--green-700)}
-h1{font-size:clamp(40px,7vw,64px);line-height:1.05;font-weight:800;color:var(--charcoal);margin-top:4px}
+h1{font-size:clamp(36px,6.4vw,64px);line-height:1.05;font-weight:800;color:var(--charcoal);margin-top:4px}
+
+.sub{color:var(--gray-700);margin-top:12px}
 
 /* Next up: brand key-details card */
 .next{background:var(--green-100);border-radius:20px;padding:24px 28px}
@@ -62,6 +64,7 @@ h2{font-size:22px;font-weight:600;color:var(--green-700)}
 .row.hol .d b{font-weight:600;font-size:15px;white-space:nowrap;background:var(--green-200);border-radius:6px;padding:1px 6px;margin-left:-6px}
 .t{font-weight:600}
 .t.tbc{font-weight:500;color:var(--gray-500)}
+.row.tbd .d{color:var(--gray-500);font-weight:500}
 .row.hol .t{font-weight:500;color:var(--gray-700)}
 .st{font-size:12px;font-weight:600;color:var(--green-800);background:var(--green-100);border-radius:6px;padding:1px 6px;margin-left:8px;vertical-align:1px}
 .row.done .t::after{content:"Done";font-size:12px;font-weight:600;color:var(--green-800);background:var(--green-100);border-radius:6px;padding:1px 6px;margin-left:8px;vertical-align:1px}
@@ -108,7 +111,8 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
     <div>
       <img class="logo" src="logo.png" alt="RoboCup Junior Australia" width="163" height="56">
       <p class="org">RoboCup Junior NSW</p>
-      <h1>2027 dates</h1>
+      <h1>2027 draft dates</h1>
+      <p class="sub">Dates may change until the committee confirms them.</p>
     </div>
     <aside class="next" id="next" aria-label="Next date" hidden></aside>
   </header>
@@ -155,6 +159,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
   };
 
   let events = [];
+  let undated = [];
   let year = 2027;
 
   const parse = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
@@ -200,6 +205,10 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
         <div class="d">${dateCell(e)}</div>
         <div><p class="t${t ? '' : ' tbc'}">${t ? esc(t) : 'Event name TBC'}${e.status ? `<span class="st">${esc(e.status)}</span>` : ''}</p>${meta ? `<p class="m">${meta}</p>` : ''}</div>
       </div>`;
+    }
+    if (undated.length) {
+      html += '<h3 class="month">Date TBC</h3>';
+      for (const e of undated) html += `<div class="row tbd"><div class="d">TBC</div><div><p class="t">${esc(e.title)}</p>${e.note ? `<p class="m"><span>${esc(e.note)}</span></p>` : ''}</div></div>`;
     }
     $('#list').innerHTML = html;
   }
@@ -276,7 +285,9 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
   fetch('dates.json', {cache: 'no-cache'})
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(data => {
-      events = data.filter(e => typeof e.start === 'string').map((e, i) => ({id: 'e' + i, ...e}));
+      const all = data.map((e, i) => ({id: 'e' + i, ...e}));
+      events = all.filter(e => e.start);
+      undated = all.filter(e => !e.start);
       renderList(); renderNext(); renderYear();
     })
     .catch(() => { $('#list').innerHTML = '<p class="note">Couldn’t load the dates. Refresh the page to try again.</p>'; });

@@ -1,6 +1,6 @@
-# RCJ 2027 dates
+# RCJ NSW 2027 draft dates
 
-Calendar page for RoboCup Junior NSW 2027 dates. Served by GitHub Pages.
+Calendar page for RoboCup Junior NSW draft 2027 dates. Served by GitHub Pages.
 
 To change dates, edit `dates.json`. Each entry:
 
@@ -9,3 +9,5 @@ To change dates, edit `dates.json`. Each entry:
 ```
 
 `kind` is `event` or `holiday`. `end` is optional, for date ranges. Dates are `YYYY-MM-DD`.
+
+Entries with no `start` are listed under "Date TBC".
