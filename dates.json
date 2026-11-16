@@ -66,6 +66,12 @@
     "done": false
   },
   {
+    "title": "RoboLeaders Exhibition",
+    "kind": "event",
+    "start": "2027-12-08",
+    "done": false
+  },
+  {
     "title": "Summer school holidays",
     "kind": "holiday",
     "start": "2027-12-21",
