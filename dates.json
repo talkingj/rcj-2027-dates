@@ -1,12 +1,5 @@
 [
   {
-    "title": "NSW AGM",
-    "kind": "event",
-    "start": "2026-12-02",
-    "place": "Online",
-    "done": false
-  },
-  {
     "title": "Planning Day",
     "kind": "event",
     "start": "2027-02-06",
@@ -83,35 +76,30 @@
     "title": "Spike Prime Challenge due",
     "kind": "event",
     "start": "",
-    "note": "2025: Fri 27 June",
     "done": false
   },
   {
     "title": "Term 2 Workshop",
     "kind": "event",
     "start": "",
-    "note": "2026: Sat 27 June, 1–4pm, MLC Burwood",
     "done": false
   },
   {
     "title": "State Competition",
     "kind": "event",
     "start": "",
-    "note": "2026: Mon–Tue 24–25 August",
     "done": false
   },
   {
     "title": "Nationals",
     "kind": "event",
     "start": "",
-    "note": "2025: 10–12 October, Shirley Smith High School ACT",
     "done": false
   },
   {
     "title": "Sumo Competition",
     "kind": "event",
     "start": "",
-    "note": "2026: 18 November, Trinity Grammar Preparatory School Strathfield",
     "done": false
   }
 ]
