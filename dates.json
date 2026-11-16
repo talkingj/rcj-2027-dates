@@ -23,10 +23,34 @@
     "done": false
   },
   {
+    "title": "Thirlmere Workshop",
+    "kind": "possible",
+    "start": "2027-04-05",
+    "end": "2027-04-09",
+    "note": "Last week of Term 1",
+    "done": false
+  },
+  {
     "title": "Autumn school holidays",
     "kind": "holiday",
     "start": "2027-04-12",
     "end": "2027-04-23",
+    "done": false
+  },
+  {
+    "title": "Campbelltown Workshop",
+    "kind": "possible",
+    "start": "2027-04-26",
+    "end": "2027-04-30",
+    "note": "First week of Term 2",
+    "done": false
+  },
+  {
+    "title": "Wollongong Workshop",
+    "kind": "possible",
+    "start": "2027-05-03",
+    "end": "2027-05-07",
+    "note": "Week 2 of Term 2",
     "done": false
   },
   {
@@ -35,6 +59,14 @@
     "start": "2027-05-15",
     "time": "1–4pm",
     "place": "TBA (Melrose? MLC?)",
+    "done": false
+  },
+  {
+    "title": "Term 2 Workshop",
+    "kind": "possible",
+    "start": "2027-06-14",
+    "end": "2027-06-20",
+    "note": "Middle week of June",
     "done": false
   },
   {
@@ -59,10 +91,34 @@
     "done": false
   },
   {
+    "title": "State Competition",
+    "kind": "possible",
+    "start": "2027-08-23",
+    "end": "2027-09-10",
+    "note": "Late August or early September",
+    "done": false
+  },
+  {
     "title": "Spring school holidays",
     "kind": "holiday",
     "start": "2027-09-27",
     "end": "2027-10-08",
+    "done": false
+  },
+  {
+    "title": "Nationals",
+    "kind": "possible",
+    "start": "2027-10-01",
+    "end": "2027-10-31",
+    "note": "Any time in October",
+    "done": false
+  },
+  {
+    "title": "Sumo Competition",
+    "kind": "possible",
+    "start": "2027-11-15",
+    "end": "2027-11-19",
+    "note": "Middle week of November",
     "done": false
   },
   {
@@ -80,30 +136,6 @@
   },
   {
     "title": "Spike Prime Challenge due",
-    "kind": "event",
-    "start": "",
-    "done": false
-  },
-  {
-    "title": "Term 2 Workshop",
-    "kind": "event",
-    "start": "",
-    "done": false
-  },
-  {
-    "title": "State Competition",
-    "kind": "event",
-    "start": "",
-    "done": false
-  },
-  {
-    "title": "Nationals",
-    "kind": "event",
-    "start": "",
-    "done": false
-  },
-  {
-    "title": "Sumo Competition",
     "kind": "event",
     "start": "",
     "done": false
