@@ -86,6 +86,64 @@ h2{font-size:22px;font-weight:600;color:var(--green-700)}
 .tl-hint{display:none;font-size:13px;color:var(--gray-500);margin-top:4px}
 @media (max-width:1020px){.tl-hint{display:block}}
 
+/* View switch */
+.views{display:flex;gap:24px;border-bottom:1px solid var(--gray-200);margin-bottom:20px}
+.views button{border:0;background:none;min-height:44px;padding:0 2px;margin-bottom:-1px;font-weight:600;font-size:15px;color:var(--gray-500);border-bottom:2px solid transparent;cursor:pointer}
+.views button[aria-selected="true"]{color:var(--charcoal);border-bottom-color:var(--green-700)}
+.views button:hover{color:var(--charcoal)}
+
+/* Month calendar */
+.mv-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.mv-head h3{font-size:24px;font-weight:700}
+.mv-nav{display:flex;gap:4px}
+.mv-nav button{width:44px;height:44px;border-radius:999px;border:0;background:transparent;color:var(--green-700);cursor:pointer;display:grid;place-items:center}
+.mv-nav button:hover:not(:disabled){background:var(--green-100)}
+.mv-nav button:disabled{color:var(--gray-300);cursor:default}
+.mv-nav svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.mv-strip{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;margin:12px 0 16px}
+.mv-strip button{position:relative;border:0;background:none;border-radius:6px;min-height:36px;font-size:13px;font-weight:600;color:var(--gray-700);cursor:pointer}
+.mv-strip button:hover{background:var(--green-100)}
+.mv-strip button[aria-current="true"]{background:var(--green-700);color:var(--white)}
+.mv-strip button.has::after{content:"";position:absolute;left:50%;bottom:3px;width:4px;height:4px;margin-left:-2px;border-radius:999px;background:var(--green-700)}
+.mv-strip button.has[aria-current="true"]::after{background:var(--white)}
+@media (max-width:640px){.mv-strip{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.mv{border-top:1px solid var(--gray-200);border-left:1px solid var(--gray-200)}
+.mv-row{display:grid;grid-template-columns:52px minmax(0,1fr)}
+.mv-days{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.mv-dow > div:first-child,.mv-dow .mv-days > div{font-size:12px;font-weight:600;color:var(--gray-500);padding:6px 8px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+.mv-wk{border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:8px 4px;font-size:11px;line-height:1.3;color:var(--gray-500);text-align:center}
+.mv-wk b{display:block;font-size:12px;color:var(--green-800)}
+.cell{min-height:112px;padding:6px 6px 8px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);display:flex;flex-direction:column;gap:4px;min-width:0}
+.cell.out{background:var(--white)}
+.cell.out .num{color:var(--gray-300)}
+.cell.hol{background:var(--green-100)}
+.cell.we:not(.hol){background:#fafcfa}
+.num{position:absolute;top:6px;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--charcoal);width:24px;height:24px;display:grid;place-items:center;border-radius:999px;margin-left:-4px}
+.cell.today .num{box-shadow:0 0 0 2px var(--charcoal)}
+.cell{position:relative}
+.hol-tag{font-size:11px;font-weight:500;color:var(--green-800);position:absolute;top:10px;right:6px}
+.chip{display:block;width:100%;text-align:left;border:0;background:none;padding:2px 0 2px 14px;position:relative;font-size:12px;font-weight:600;line-height:1.3;color:var(--charcoal);cursor:pointer}
+.chip::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:999px;background:var(--green-700)}
+.chip small{display:block;font-weight:500;color:var(--gray-700)}
+.chip:hover{text-decoration:underline;text-underline-offset:2px}
+.bar{position:absolute;height:22px;border:1.5px dashed var(--green-700);border-radius:5px;background:var(--hatch);font-size:12px;font-style:italic;font-weight:600;color:var(--green-900);padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;cursor:pointer;z-index:1;line-height:19px}
+.bar.cl{border-left-style:none;border-top-left-radius:0;border-bottom-left-radius:0}
+.bar.cr{border-right-style:none;border-top-right-radius:0;border-bottom-right-radius:0}
+.mv-list{display:none;margin-top:16px}
+@media (max-width:700px){
+  .mv-row{grid-template-columns:34px minmax(0,1fr)}
+  .mv-wk{font-size:10px;padding:6px 2px}
+  .mv-wk b{font-size:10px}
+  .mv-dow div{padding:6px 4px;font-size:11px}
+  .cell{min-height:58px;padding:4px}
+  .hol-tag{display:none}
+  .chip{font-size:0;padding:0;height:10px}
+  .chip small{display:none}
+  .chip::before{top:1px;left:2px}
+  .bar{font-size:0;height:8px;padding:0}
+  .mv-list{display:block}
+}
+
 /* Terms */
 .terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 56px}
 @media (max-width:860px){.terms{grid-template-columns:minmax(0,1fr)}}
@@ -136,6 +194,11 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
         <span><i class="sw hol"></i>NSW school holidays</span>
       </div>
     </div>
+    <div class="views" role="tablist" aria-label="View">
+      <button type="button" role="tab" id="tabTl" aria-controls="tlView" aria-selected="true">Timeline</button>
+      <button type="button" role="tab" id="tabMv" aria-controls="mvView" aria-selected="false">Calendar</button>
+    </div>
+    <div id="tlView" role="tabpanel" aria-labelledby="tabTl">
     <div class="tl-scroll" tabindex="0" aria-label="Season timeline, scrolls sideways">
       <div class="tl" id="tl">
         <div class="lanes" id="lanes"></div>
@@ -145,6 +208,19 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
       </div>
     </div>
     <p class="tl-hint">Scroll sideways to see the whole year.</p>
+    </div>
+    <div id="mvView" role="tabpanel" aria-labelledby="tabMv" hidden>
+      <div class="mv-head">
+        <h3 id="mvTitle" aria-live="polite"></h3>
+        <div class="mv-nav">
+          <button type="button" id="mvPrev" aria-label="Previous month"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button type="button" id="mvNext" aria-label="Next month"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="mv-strip" id="mvStrip" role="group" aria-label="Jump to month"></div>
+      <div class="mv" id="mvGrid"></div>
+      <div class="mv-list" id="mvList"></div>
+    </div>
   </section>
 
   <section class="block" aria-labelledby="termTitle">
@@ -232,6 +308,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
   function renderTimeline() {
     const tl = $('#tl');
     const W = tl.clientWidth - 8;
+    if (W <= 0) return;
     const y0 = new Date(YEAR, 0, 1), y1 = new Date(YEAR + 1, 0, 1), span = (y1 - y0) / DAY;
     const px = d => Math.max(0, Math.min(W, ((d - y0) / DAY) / span * W));
     const startPx = s => px(parse(s));
@@ -300,7 +377,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
   }
 
   // ----- Term blocks -----
-  function rowHtml(e) {
+  function rowHtml(e, ref) {
     const pos = e.kind === 'possible';
     const a = parse(e.start);
     const wl = weekLabel(e);
@@ -308,7 +385,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
       ? `<b>${spanText(e)}</b><small>${wl || 'Possible window'}</small>`
       : `${spanText(e)}<small>${DAYS[a.getDay()]}${wl ? ', week ' + weekIn(termOf(e.start), e.start) : ''}</small>`;
     const meta = [e.time, e.place, e.coordinator && `Coordinator: ${e.coordinator}`, e.note].filter(Boolean).map(x => `<span>${esc(x)}</span>`).join('');
-    return `<div class="row${pos ? ' pos' : ''}" data-id="${e.id}">
+    return `<div class="row${pos ? ' pos' : ''}" ${ref ? 'data-ref' : 'data-id'}="${e.id}">
       <div class="d">${d}</div>
       <div><p class="t">${esc(e.title)}${pos ? '<span class="tag">Possible dates</span>' : ''}</p>${meta ? `<p class="m">${meta}</p>` : ''}</div>
     </div>`;
@@ -342,6 +419,88 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
     $('#tbc').innerHTML = undated.map(e => `<div class="row"><div><p class="t">${esc(e.title)}</p>${e.note ? `<p class="m">${esc(e.note)}</p>` : ''}</div></div>`).join('');
   }
 
+  // ----- Month calendar -----
+  let month = 0;
+  const inRange = (d, e) => d >= e.start && d <= lastDay(e);
+  function renderMonth() {
+    const first = new Date(YEAR, month, 1), lastD = new Date(YEAR, month + 1, 0);
+    $('#mvTitle').textContent = `${MONTHS[month]} ${YEAR}`;
+    $('#mvPrev').disabled = month === 0;
+    $('#mvNext').disabled = month === 11;
+    $('#mvStrip').innerHTML = MON.map((m, i) => {
+      const a = iso(new Date(YEAR, i, 1)), b = iso(new Date(YEAR, i + 1, 0));
+      const has = items.some(e => e.start <= b && lastDay(e) >= a);
+      return `<button type="button" data-m="${i}" class="${has ? 'has' : ''}" aria-current="${i === month}" aria-label="${MONTHS[i]}${has ? ', has dates' : ''}">${m}</button>`;
+    }).join('');
+
+    let html = `<div class="mv-row mv-dow"><div></div><div class="mv-days">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d => `<div>${d}</div>`).join('')}</div></div>`;
+    for (let wk = monday(first); wk <= lastD; wk.setDate(wk.getDate() + 7)) {
+      const days = [...Array(7)].map((_, i) => { const d = new Date(wk); d.setDate(d.getDate() + i); return d; });
+      const wS = iso(days[0]), wE = iso(days[6]);
+      // Possible windows crossing this week, packed into lanes
+      const segs = [], laneEnd = [];
+      for (const e of items.filter(x => x.kind === 'possible' && x.start <= wE && lastDay(x) >= wS)) {
+        const c0 = e.start < wS ? 0 : days.findIndex(d => iso(d) === e.start);
+        const c1 = lastDay(e) > wE ? 6 : days.findIndex(d => iso(d) === lastDay(e));
+        let lane = laneEnd.findIndex(end => end < c0);
+        if (lane === -1) { lane = laneEnd.length; laneEnd.push(-1); }
+        laneEnd[lane] = c1;
+        segs.push({e, c0, c1, lane, cl: e.start < wS, cr: lastDay(e) > wE});
+      }
+      const pad = 34 + laneEnd.length * 26;
+      // Term week label
+      const tDay = days.find(d => termOf(iso(d)));
+      const t = tDay && termOf(iso(tDay));
+      const wkLabel = t ? `<b>T${t.title.replace('Term ', '')}</b>Wk ${weekIn(t, iso(tDay))}` : '';
+      let cells = '';
+      for (const d of days) {
+        const k = iso(d), wd = d.getDay();
+        const hol = hols.find(h => inRange(k, h));
+        const cls = ['cell'];
+        if (d.getMonth() !== month) cls.push('out');
+        if (hol) cls.push('hol');
+        if (wd === 0 || wd === 6) cls.push('we');
+        if (k === todayIso) cls.push('today');
+        const evs = d.getMonth() === month ? items.filter(e => e.kind === 'event' && inRange(k, e)) : [];
+        const holTag = hol && d.getMonth() === month && (k === hol.start || wd === 1 || d.getDate() === 1) ? `<span class="hol-tag">${esc(hol.title.replace(' holidays', ' hols'))}</span>` : '';
+        cells += `<div class="${cls.join(' ')}" style="padding-top:${pad}px"><span class="num">${d.getDate()}</span>${holTag}${evs.map(e => `<button type="button" class="chip" data-go="${e.id}" title="${esc(e.title)}">${esc(e.title)}${e.time ? `<small>${esc(e.time)}</small>` : ''}</button>`).join('')}</div>`;
+      }
+      const bars = segs.map(sg => `<button type="button" class="bar${sg.cl ? ' cl' : ''}${sg.cr ? ' cr' : ''}" data-go="${sg.e.id}" title="${esc(sg.e.title)}: possibly ${esc(spanText(sg.e))}" style="top:${32 + sg.lane * 26}px;left:calc(${sg.c0} * 100% / 7 + ${sg.cl ? 0 : 4}px);width:calc(${sg.c1 - sg.c0 + 1} * 100% / 7 - ${(sg.cl ? 0 : 4) + (sg.cr ? 0 : 4)}px)">${esc(sg.e.title)}</button>`).join('');
+      html += `<div class="mv-row"><div class="mv-wk">${wkLabel}</div><div class="mv-days">${cells}${bars}</div></div>`;
+    }
+    $('#mvGrid').innerHTML = html;
+
+    const a = iso(first), b = iso(lastD);
+    const inMonth = items.filter(e => e.start <= b && lastDay(e) >= a);
+    $('#mvList').innerHTML = inMonth.length ? inMonth.map(e => rowHtml(e, true)).join('') : '<p class="note">Nothing this month.</p>';
+  }
+  $('#mvPrev').onclick = () => { if (month > 0) { month--; renderMonth(); } };
+  $('#mvNext').onclick = () => { if (month < 11) { month++; renderMonth(); } };
+  $('#mvStrip').addEventListener('click', ev => { const b = ev.target.closest('button'); if (b) { month = +b.dataset.m; renderMonth(); } });
+
+  function setView(v) {
+    const mv = v === 'calendar';
+    $('#tabTl').setAttribute('aria-selected', String(!mv));
+    $('#tabMv').setAttribute('aria-selected', String(mv));
+    $('#tlView').hidden = mv; $('#mvView').hidden = !mv;
+    try { localStorage.setItem('rcj-view', v); } catch {}
+    if (!mv && terms.length) renderTimeline();
+  }
+  $('#tabTl').onclick = () => setView('timeline');
+  $('#tabMv').onclick = () => setView('calendar');
+  document.querySelector('.views').addEventListener('keydown', ev => {
+    if (ev.key !== 'ArrowLeft' && ev.key !== 'ArrowRight') return;
+    const next = ev.target.id === 'tabTl' ? $('#tabMv') : $('#tabTl');
+    next.focus(); next.click();
+  });
+
+  function goTo(id) {
+    const row = document.querySelector(`.row[data-id="${id}"]`); if (!row) return;
+    row.scrollIntoView({block: 'center', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    row.classList.add('flash'); setTimeout(() => row.classList.remove('flash'), 900);
+  }
+  $('#mvGrid').addEventListener('click', ev => { const b = ev.target.closest('[data-go]'); if (b) goTo(b.dataset.go); });
+
   // Timeline item → its row below
   $('#lanes').addEventListener('click', ev => {
     const b = ev.target.closest('.it'); if (!b) return;
@@ -362,7 +521,15 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
       hols = all.filter(e => e.kind === 'holiday').sort(byStart);
       items = all.filter(e => e.start && (e.kind === 'event' || e.kind === 'possible')).sort(byStart);
       undated = all.filter(e => !e.start);
-      renderNext(); renderTerms(); renderTbc();
+      const nx = items.find(e => lastDay(e) >= todayIso);
+      month = nx && parse(nx.start).getFullYear() === YEAR ? parse(nx.start).getMonth() : 0;
+      renderNext(); renderTerms(); renderTbc(); renderMonth();
+      let v = 'timeline'; try { v = localStorage.getItem('rcj-view') || v; } catch {}
+      if (location.hash === '#calendar') v = 'calendar';
+      if (location.hash === '#timeline') v = 'timeline';
+      const hm = MON.findIndex(m => '#' + m.toLowerCase() === location.hash.toLowerCase());
+      if (hm >= 0) { v = 'calendar'; month = hm; renderMonth(); }
+      setView(v);
       (document.fonts?.ready || Promise.resolve()).then(renderTimeline);
     })
     .catch(() => { $('#terms').innerHTML = '<p class="note">Couldn’t load the dates. Refresh the page to try again.</p>'; });
