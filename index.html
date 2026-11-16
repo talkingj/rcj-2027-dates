@@ -21,7 +21,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--white)}
-body{background:var(--white);color:var(--charcoal);font-family:var(--font-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{background:var(--white);color:var(--charcoal);font-family:var(--font-body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--font-display);letter-spacing:-.01em;text-wrap:balance}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--green-700);outline-offset:2px;border-radius:4px}
@@ -35,7 +35,7 @@ button{font:inherit;color:inherit}
 .logo{height:56px;width:auto;display:block;margin-bottom:28px}
 .org{font-weight:600;font-size:17px;color:var(--green-700)}
 h1{font-size:clamp(36px,6.4vw,64px);line-height:1.05;font-weight:800;margin-top:4px}
-.sub{color:var(--gray-700);margin-top:12px}
+.sub{color:var(--gray-700);margin-top:12px;font-size:20px}
 
 .next{background:var(--green-100);border-radius:20px;padding:24px 28px}
 .next-label{font-weight:600;font-size:14px;color:var(--green-800);display:flex;justify-content:space-between;gap:12px}
@@ -51,7 +51,7 @@ section.block + section.block{margin-top:48px}
 h2{font-size:22px;font-weight:600;color:var(--green-700)}
 
 /* Legend */
-.key{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--gray-700)}
+.key{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;color:var(--gray-700)}
 .key span{display:inline-flex;align-items:center;gap:8px}
 .sw{display:inline-block;flex:none}
 .sw.ev{width:12px;height:12px;border-radius:999px;background:var(--green-700)}
@@ -70,7 +70,6 @@ h2{font-size:22px;font-weight:600;color:var(--green-700)}
 .it.ev{width:12px}
 .it.ev::before{content:"";width:12px;height:12px;border-radius:999px;background:var(--green-700);box-shadow:0 0 0 3px var(--white)}
 .it.pos{border-radius:6px;background:var(--hatch);border:1.5px dashed var(--green-700);color:var(--green-900)}
-.it.pos .lab{font-style:italic}
 .it:hover .lab{text-decoration:underline;text-underline-offset:3px}
 .stem{position:absolute;width:0;border-left:1px solid var(--gray-300)}
 .stem.pos{border-left-style:dashed;border-left-color:var(--green-700)}
@@ -88,7 +87,7 @@ h2{font-size:22px;font-weight:600;color:var(--green-700)}
 
 /* View switch */
 .views{display:flex;gap:24px;border-bottom:1px solid var(--gray-200);margin-bottom:20px}
-.views button{border:0;background:none;min-height:44px;padding:0 2px;margin-bottom:-1px;font-weight:600;font-size:15px;color:var(--gray-500);border-bottom:2px solid transparent;cursor:pointer}
+.views button{border:0;background:none;min-height:48px;padding:0 2px;margin-bottom:-1px;font-weight:600;font-size:17px;color:var(--gray-500);border-bottom:2px solid transparent;cursor:pointer}
 .views button[aria-selected="true"]{color:var(--charcoal);border-bottom-color:var(--green-700)}
 .views button:hover{color:var(--charcoal)}
 
@@ -101,32 +100,32 @@ h2{font-size:22px;font-weight:600;color:var(--green-700)}
 .mv-nav button:disabled{color:var(--gray-300);cursor:default}
 .mv-nav svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .mv-strip{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;margin:12px 0 16px}
-.mv-strip button{position:relative;border:0;background:none;border-radius:6px;min-height:36px;font-size:13px;font-weight:600;color:var(--gray-700);cursor:pointer}
+.mv-strip button{position:relative;border:0;background:none;border-radius:6px;min-height:44px;font-size:15px;font-weight:600;color:var(--gray-700);cursor:pointer}
 .mv-strip button:hover{background:var(--green-100)}
 .mv-strip button[aria-current="true"]{background:var(--green-700);color:var(--white)}
 .mv-strip button.has::after{content:"";position:absolute;left:50%;bottom:3px;width:4px;height:4px;margin-left:-2px;border-radius:999px;background:var(--green-700)}
 .mv-strip button.has[aria-current="true"]::after{background:var(--white)}
 @media (max-width:640px){.mv-strip{grid-template-columns:repeat(6,minmax(0,1fr))}}
 .mv{border-top:1px solid var(--gray-200);border-left:1px solid var(--gray-200)}
-.mv-row{display:grid;grid-template-columns:52px minmax(0,1fr)}
+.mv-row{display:grid;grid-template-columns:70px minmax(0,1fr)}
 .mv-days{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
-.mv-dow > div:first-child,.mv-dow .mv-days > div{font-size:12px;font-weight:600;color:var(--gray-500);padding:6px 8px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
-.mv-wk{border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:8px 4px;font-size:11px;line-height:1.3;color:var(--gray-500);text-align:center}
-.mv-wk b{display:block;font-size:12px;color:var(--green-800)}
+.mv-dow > div:first-child,.mv-dow .mv-days > div{font-size:14px;font-weight:600;color:var(--gray-500);padding:6px 8px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+.mv-wk{border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:8px 4px;font-size:13px;line-height:1.3;color:var(--gray-700);text-align:center}
+.mv-wk b{display:block;font-size:13px;color:var(--green-800)}
 .cell{min-height:112px;padding:6px 6px 8px;border-right:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);display:flex;flex-direction:column;gap:4px;min-width:0}
 .cell.out{background:var(--white)}
 .cell.out .num{color:var(--gray-300)}
 .cell.hol{background:var(--green-100)}
 .cell.we:not(.hol){background:#fafcfa}
-.num{position:absolute;top:6px;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--charcoal);width:24px;height:24px;display:grid;place-items:center;border-radius:999px;margin-left:-4px}
+.num{position:absolute;top:6px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--charcoal);width:24px;height:24px;display:grid;place-items:center;border-radius:999px;margin-left:-4px}
 .cell.today .num{box-shadow:0 0 0 2px var(--charcoal)}
 .cell{position:relative}
-.hol-tag{font-size:11px;font-weight:500;color:var(--green-800);position:absolute;top:10px;right:6px}
-.chip{display:block;width:100%;text-align:left;border:0;background:none;padding:2px 0 2px 14px;position:relative;font-size:12px;font-weight:600;line-height:1.3;color:var(--charcoal);cursor:pointer}
+.hol-tag{font-size:12px;font-weight:500;color:var(--green-800);position:absolute;top:10px;right:6px}
+.chip{display:block;width:100%;text-align:left;border:0;background:none;padding:2px 0 2px 14px;position:relative;font-size:14px;font-weight:600;line-height:1.3;color:var(--charcoal);cursor:pointer}
 .chip::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:999px;background:var(--green-700)}
 .chip small{display:block;font-weight:500;color:var(--gray-700)}
 .chip:hover{text-decoration:underline;text-underline-offset:2px}
-.bar{position:absolute;height:22px;border:1.5px dashed var(--green-700);border-radius:5px;background:var(--hatch);font-size:12px;font-style:italic;font-weight:600;color:var(--green-900);padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;cursor:pointer;z-index:1;line-height:19px}
+.bar{position:absolute;height:24px;border:1.5px dashed var(--green-700);border-radius:5px;background:var(--hatch);font-size:13px;font-weight:600;color:var(--green-900);padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;cursor:pointer;z-index:1;line-height:21px}
 .bar.cl{border-left-style:none;border-top-left-radius:0;border-bottom-left-radius:0}
 .bar.cr{border-right-style:none;border-top-right-radius:0;border-bottom-right-radius:0}
 .mv-list{display:none;margin-top:16px}
@@ -147,23 +146,22 @@ h2{font-size:22px;font-weight:600;color:var(--green-700)}
 /* Terms */
 .terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 56px}
 @media (max-width:860px){.terms{grid-template-columns:minmax(0,1fr)}}
-.term h3{font-size:20px;font-weight:600;color:var(--charcoal)}
-.term .range{font-size:14px;color:var(--gray-500);margin-top:2px;padding-bottom:8px;border-bottom:2px solid var(--charcoal)}
-.row{display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--gray-200);transition:background-color .6s ease-out}
+.term h3{font-size:24px;font-weight:600;color:var(--charcoal)}
+.term .range{font-size:16px;color:var(--gray-700);margin-top:2px;padding-bottom:8px;border-bottom:2px solid var(--charcoal)}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:16px 0;border-bottom:1px solid var(--gray-200);transition:background-color .6s ease-out}
 .row.flash{background:var(--green-100);transition:none}
-.d{font-family:var(--font-display);font-weight:600;color:var(--green-700);font-variant-numeric:tabular-nums;line-height:1.35}
-.d small{display:block;font-family:var(--font-body);font-weight:500;font-size:13px;color:var(--gray-500);margin-top:2px}
-.t{font-weight:600}
-.m{font-size:14px;color:var(--gray-700);margin-top:2px}
-.m span+span::before{content:"\00B7";margin:0 8px;color:var(--gray-300)}
+.d{font-size:19px;font-family:var(--font-display);font-weight:600;color:var(--green-700);font-variant-numeric:tabular-nums;line-height:1.35}
+.d small{display:block;font-family:var(--font-body);font-weight:500;font-size:15px;color:var(--gray-700);margin-top:2px}
+.t{font-weight:600;font-size:19px;line-height:1.35}
+.m{font-size:16px;color:var(--gray-700);margin-top:4px}
+.m span{display:block}
 .row.pos .d{color:var(--green-900)}
-.row.pos .d b{display:inline-block;font-weight:600;font-size:15px;white-space:nowrap;background:var(--hatch);border:1.5px dashed var(--green-700);border-radius:6px;padding:0 6px}
-.row.pos .t{font-style:italic}
-.tag{display:inline-block;white-space:nowrap;font-style:normal;font-size:12px;font-weight:600;color:var(--green-800);border:1.5px dashed var(--green-700);border-radius:6px;padding:0 6px;margin-left:8px;vertical-align:1px}
-.row.hol{background:var(--green-100);border-bottom:0;border-radius:8px;padding:10px 12px;margin-top:12px;grid-template-columns:120px minmax(0,1fr)}
+.row.pos .d b{display:inline-block;font-weight:600;font-size:16px;white-space:nowrap;background:var(--hatch);border:1.5px dashed var(--green-700);border-radius:6px;padding:0 6px}
+.tag{display:inline-block;white-space:nowrap;font-style:normal;font-size:14px;font-weight:600;color:var(--green-800);border:1.5px dashed var(--green-700);border-radius:6px;padding:0 6px;margin-left:8px;vertical-align:1px}
+.row.hol{background:var(--green-100);border-bottom:0;border-radius:8px;padding:12px 14px;margin-top:14px;grid-template-columns:136px minmax(0,1fr)}
 .row.hol .d{color:var(--green-800)}
 .row.hol .t{font-weight:500;color:var(--gray-700)}
-@media (max-width:420px){.row{grid-template-columns:112px minmax(0,1fr);gap:12px}.row.hol{grid-template-columns:100px minmax(0,1fr)}}
+@media (max-width:480px){.row{grid-template-columns:minmax(0,1fr);gap:4px}.row.hol{grid-template-columns:minmax(0,1fr)}}
 .tbc{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0 56px}
 .tbc .row{grid-template-columns:minmax(0,1fr)}
 .note{color:var(--gray-500);font-size:15px}
@@ -184,21 +182,31 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
     <aside class="next" id="next" aria-label="Next date" hidden></aside>
   </header>
 
+  <section class="block" aria-labelledby="termTitle">
+    <div class="block-head"><h2 id="termTitle">All dates, term by term</h2></div>
+    <div class="terms" id="terms"><p class="note">Loading dates…</p></div>
+  </section>
+
+  <section class="block" id="tbcBlock" aria-labelledby="tbcTitle" hidden>
+    <div class="block-head"><h2 id="tbcTitle">Still to be scheduled</h2></div>
+    <div class="tbc" id="tbc"></div>
+  </section>
+
   <section class="block" aria-labelledby="tlTitle">
     <div class="block-head">
-      <h2 id="tlTitle">Season at a glance</h2>
+      <h2 id="tlTitle">Calendar</h2>
       <div class="key">
-        <span><i class="sw ev"></i>Set date</span>
-        <span><i class="sw pos"></i>Possible dates, not yet set</span>
-        <span><i class="sw term"></i>School term, with week numbers</span>
+        <span><i class="sw ev"></i>Date set</span>
+        <span><i class="sw pos"></i>Date not set yet</span>
+        <span><i class="sw term"></i>School term</span>
         <span><i class="sw hol"></i>NSW school holidays</span>
       </div>
     </div>
     <div class="views" role="tablist" aria-label="View">
-      <button type="button" role="tab" id="tabTl" aria-controls="tlView" aria-selected="true">Timeline</button>
-      <button type="button" role="tab" id="tabMv" aria-controls="mvView" aria-selected="false">Calendar</button>
+      <button type="button" role="tab" id="tabMv" aria-controls="mvView" aria-selected="true">Month by month</button>
+      <button type="button" role="tab" id="tabTl" aria-controls="tlView" aria-selected="false">Whole year</button>
     </div>
-    <div id="tlView" role="tabpanel" aria-labelledby="tabTl">
+    <div id="tlView" role="tabpanel" aria-labelledby="tabTl" hidden>
     <div class="tl-scroll" tabindex="0" aria-label="Season timeline, scrolls sideways">
       <div class="tl" id="tl">
         <div class="lanes" id="lanes"></div>
@@ -209,7 +217,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
     </div>
     <p class="tl-hint">Scroll sideways to see the whole year.</p>
     </div>
-    <div id="mvView" role="tabpanel" aria-labelledby="tabMv" hidden>
+    <div id="mvView" role="tabpanel" aria-labelledby="tabMv">
       <div class="mv-head">
         <h3 id="mvTitle" aria-live="polite"></h3>
         <div class="mv-nav">
@@ -221,16 +229,6 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
       <div class="mv" id="mvGrid"></div>
       <div class="mv-list" id="mvList"></div>
     </div>
-  </section>
-
-  <section class="block" aria-labelledby="termTitle">
-    <div class="block-head"><h2 id="termTitle">Dates by term</h2></div>
-    <div class="terms" id="terms"><p class="note">Loading dates…</p></div>
-  </section>
-
-  <section class="block" id="tbcBlock" aria-labelledby="tbcTitle" hidden>
-    <div class="block-head"><h2 id="tbcTitle">Still to be scheduled</h2></div>
-    <div class="tbc" id="tbc"></div>
   </section>
 
   <footer>RoboCup Junior Australia &middot; NSW</footer>
@@ -274,10 +272,10 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
     const t = termOf(e.start);
     if (!t) return '';
     const w1 = weekIn(t, e.start);
-    if (e.start === lastDay(e)) return `${t.title}, week ${w1}`;
+    if (e.start === lastDay(e)) return `${t.title}, Week ${w1}`;
     if (termOf(lastDay(e)) !== t) return '';
     const w2 = weekIn(t, lastDay(e));
-    return w1 === w2 ? `${t.title}, week ${w1}` : `${t.title}, weeks ${w1}–${w2}`;
+    return w1 === w2 ? `${t.title}, Week ${w1}` : `${t.title}, Weeks ${w1}–${w2}`;
   }
 
   // ----- Next date card -----
@@ -302,7 +300,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
   // ----- Timeline -----
   const measure = (() => {
     const c = document.createElement('canvas').getContext('2d');
-    return (t, italic) => { c.font = `${italic ? 'italic ' : ''}600 13px Inter, "Segoe UI", sans-serif`; return Math.ceil(c.measureText(t).width); };
+    return (t) => { c.font = `600 13px Inter, "Segoe UI", sans-serif`; return Math.ceil(c.measureText(t).width); };
   })();
 
   function renderTimeline() {
@@ -381,13 +379,15 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
     const pos = e.kind === 'possible';
     const a = parse(e.start);
     const wl = weekLabel(e);
+    const b = parse(lastDay(e));
     const d = pos
-      ? `<b>${spanText(e)}</b><small>${wl || 'Possible window'}</small>`
-      : `${spanText(e)}<small>${DAYS[a.getDay()]}${wl ? ', week ' + weekIn(termOf(e.start), e.start) : ''}</small>`;
-    const meta = [e.time, e.place, e.coordinator && `Coordinator: ${e.coordinator}`, e.note].filter(Boolean).map(x => `<span>${esc(x)}</span>`).join('');
+      ? `<b>Not set yet</b><small>${wl || ''}</small>`
+      : `${DOW[a.getDay()]} ${spanText(e)}<small>${wl}</small>`;
+    const between = pos ? `Sometime between ${DOW[a.getDay()]} ${spanText({start: e.start})} and ${DOW[b.getDay()]} ${spanText({start: lastDay(e)})}` : '';
+    const meta = [between, e.time, e.place, e.coordinator && `Coordinator: ${e.coordinator}`, e.note].filter(Boolean).map(x => `<span>${esc(x)}</span>`).join('');
     return `<div class="row${pos ? ' pos' : ''}" ${ref ? 'data-ref' : 'data-id'}="${e.id}">
       <div class="d">${d}</div>
-      <div><p class="t">${esc(e.title)}${pos ? '<span class="tag">Possible dates</span>' : ''}</p>${meta ? `<p class="m">${meta}</p>` : ''}</div>
+      <div><p class="t">${esc(e.title)}</p>${meta ? `<p class="m">${meta}</p>` : ''}</div>
     </div>`;
   }
   const holRow = h => `<div class="row hol"><div class="d">${spanText(h)}</div><div><p class="t">${esc(h.title)}</p></div></div>`;
@@ -447,11 +447,11 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
         laneEnd[lane] = c1;
         segs.push({e, c0, c1, lane, cl: e.start < wS, cr: lastDay(e) > wE});
       }
-      const pad = 34 + laneEnd.length * 26;
+      const pad = 36 + laneEnd.length * 28;
       // Term week label
       const tDay = days.find(d => termOf(iso(d)));
       const t = tDay && termOf(iso(tDay));
-      const wkLabel = t ? `<b>T${t.title.replace('Term ', '')}</b>Wk ${weekIn(t, iso(tDay))}` : '';
+      const wkLabel = t ? `<b>${t.title}</b>Week ${weekIn(t, iso(tDay))}` : '';
       let cells = '';
       for (const d of days) {
         const k = iso(d), wd = d.getDay();
@@ -465,7 +465,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
         const holTag = hol && d.getMonth() === month && (k === hol.start || wd === 1 || d.getDate() === 1) ? `<span class="hol-tag">${esc(hol.title.replace(' holidays', ' hols'))}</span>` : '';
         cells += `<div class="${cls.join(' ')}" style="padding-top:${pad}px"><span class="num">${d.getDate()}</span>${holTag}${evs.map(e => `<button type="button" class="chip" data-go="${e.id}" title="${esc(e.title)}">${esc(e.title)}${e.time ? `<small>${esc(e.time)}</small>` : ''}</button>`).join('')}</div>`;
       }
-      const bars = segs.map(sg => `<button type="button" class="bar${sg.cl ? ' cl' : ''}${sg.cr ? ' cr' : ''}" data-go="${sg.e.id}" title="${esc(sg.e.title)}: possibly ${esc(spanText(sg.e))}" style="top:${32 + sg.lane * 26}px;left:calc(${sg.c0} * 100% / 7 + ${sg.cl ? 0 : 4}px);width:calc(${sg.c1 - sg.c0 + 1} * 100% / 7 - ${(sg.cl ? 0 : 4) + (sg.cr ? 0 : 4)}px)">${esc(sg.e.title)}</button>`).join('');
+      const bars = segs.map(sg => `<button type="button" class="bar${sg.cl ? ' cl' : ''}${sg.cr ? ' cr' : ''}" data-go="${sg.e.id}" title="${esc(sg.e.title)}: possibly ${esc(spanText(sg.e))}" style="top:${34 + sg.lane * 28}px;left:calc(${sg.c0} * 100% / 7 + ${sg.cl ? 0 : 4}px);width:calc(${sg.c1 - sg.c0 + 1} * 100% / 7 - ${(sg.cl ? 0 : 4) + (sg.cr ? 0 : 4)}px)">${esc(sg.e.title)}</button>`).join('');
       html += `<div class="mv-row"><div class="mv-wk">${wkLabel}</div><div class="mv-days">${cells}${bars}</div></div>`;
     }
     $('#mvGrid').innerHTML = html;
@@ -483,14 +483,14 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
     $('#tabTl').setAttribute('aria-selected', String(!mv));
     $('#tabMv').setAttribute('aria-selected', String(mv));
     $('#tlView').hidden = mv; $('#mvView').hidden = !mv;
-    try { localStorage.setItem('rcj-view', v); } catch {}
+    try { localStorage.setItem('rcj-view2', v); } catch {}
     if (!mv && terms.length) renderTimeline();
   }
   $('#tabTl').onclick = () => setView('timeline');
   $('#tabMv').onclick = () => setView('calendar');
   document.querySelector('.views').addEventListener('keydown', ev => {
     if (ev.key !== 'ArrowLeft' && ev.key !== 'ArrowRight') return;
-    const next = ev.target.id === 'tabTl' ? $('#tabMv') : $('#tabTl');
+    const next = ev.target.id === 'tabMv' ? $('#tabTl') : $('#tabMv');
     next.focus(); next.click();
   });
 
@@ -524,7 +524,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--gray-200);fon
       const nx = items.find(e => lastDay(e) >= todayIso);
       month = nx && parse(nx.start).getFullYear() === YEAR ? parse(nx.start).getMonth() : 0;
       renderNext(); renderTerms(); renderTbc(); renderMonth();
-      let v = 'timeline'; try { v = localStorage.getItem('rcj-view') || v; } catch {}
+      let v = 'calendar'; try { v = localStorage.getItem('rcj-view2') || v; } catch {}
       if (location.hash === '#calendar') v = 'calendar';
       if (location.hash === '#timeline') v = 'timeline';
       const hm = MON.findIndex(m => '#' + m.toLowerCase() === location.hash.toLowerCase());
